@@ -7,4 +7,6 @@ from rest_framework.views import APIView
 class UserAccessView(APIView):
 
     def post(self, request, *args, **kwargs):
-        return Response(request.META["REMOTE_ADDR"])
+        # return Response(request.META["REMOTE_ADDR"])
+        return Response(request.META['HTTP_X_REAL_IP'])
+    
